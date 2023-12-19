@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18933B7B-AE0A-4BB8-B32A-B212000EF088}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bookstore_Management</RootNamespace>
+    <AssemblyName>Bookstore_Management</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EPPlus, Version=6.2.6.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.2.6\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form\BookDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\BookDetail.Designer.cs">
+      <DependentUpon>BookDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Addtacgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Addtacgia.Designer.cs">
+      <DependentUpon>Addtacgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="Sach.cs" />
+    <Compile Include="Usercontrol\BanSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\BanSach.Designer.cs">
+      <DependentUpon>BanSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\BaoCaoCongNo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\BaoCaoCongNo.Designer.cs">
+      <DependentUpon>BaoCaoCongNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\BaoCaoTon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\BaoCaoTon.Designer.cs">
+      <DependentUpon>BaoCaoTon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\LichSuBanSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\LichSuBanSach.Designer.cs">
+      <DependentUpon>LichSuBanSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\NhapSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\NhapSach.Designer.cs">
+      <DependentUpon>NhapSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\PhieuThuTien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\PhieuThuTien.Designer.cs">
+      <DependentUpon>PhieuThuTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Form\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\TaoXoaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\TaoXoaSach.Designer.cs">
+      <DependentUpon>TaoXoaSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\TraCuuSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\TraCuuSach.Designer.cs">
+      <DependentUpon>TraCuuSach.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\BookDetail.resx">
+      <DependentUpon>BookDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Addtacgia.resx">
+      <DependentUpon>Addtacgia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\BanSach.resx">
+      <DependentUpon>BanSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\BaoCaoCongNo.resx">
+      <DependentUpon>BaoCaoCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\BaoCaoTon.resx">
+      <DependentUpon>BaoCaoTon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\LichSuBanSach.resx">
+      <DependentUpon>LichSuBanSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\NhapSach.resx">
+      <DependentUpon>NhapSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\PhieuThuTien.resx">
+      <DependentUpon>PhieuThuTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Form\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\TaiKhoan.resx">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\TaoXoaSach.resx">
+      <DependentUpon>TaoXoaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\TraCuuSach.resx">
+      <DependentUpon>TraCuuSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\final2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TK2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phieuthu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cogwheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addphoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\friendlist1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\30 bo de KHXH.jpg" />
+    <Content Include="Resources\Ai roi cung se binh yen.jpg" />
+    <Content Include="Resources\Am anh so xa hoi.jpg" />
+    <Content Include="Resources\Anh hung xa dieu.jpg" />
+    <Content Include="Resources\a_100421840_m_601_en_m1_1013_638.jpg" />
+    <Content Include="Resources\Bach ma khieu tay phong.jpg" />
+    <Content Include="Resources\Bich huyet kiem.jpg" />
+    <Content Include="Resources\But pha Hoa.jpg" />
+    <Content Include="Resources\But pha Toan.jpg" />
+    <Content Include="Resources\Chinh phuc lich su.jpg" />
+    <Content Include="Resources\Cuoc song rat giong cuoc doi.jpg" />
+    <Content Include="Resources\Giai toan sinh hoc.jpg" />
+    <Content Include="Resources\Gian.jpg" />
+    <Content Include="Resources\Giao trinh C++.jpg" />
+    <Content Include="Resources\Hai huoc mot chut .jpg" />
+    <Content Include="Resources\Hay khien tuong lai biet on.jpg" />
+    <Content Include="Resources\Hiep khach hanh.jpg" />
+    <Content Include="Resources\Ky thuat lap trinh C.jpg" />
+    <Content Include="Resources\Lam sach tam hon.jpg" />
+    <Content Include="Resources\Lap trinh Java.jpg" />
+    <Content Include="Resources\Lap trinh Python.jpg" />
+    <Content Include="Resources\Lien thanh quyet.jpg" />
+    <Content Include="Resources\Nhap mon lap trinh.jpg" />
+    <Content Include="Resources\Nhap mon thuat toan.jpg" />
+    <Content Include="Resources\Nhung dieu tot dep se den dung han.jpg" />
+    <Content Include="Resources\On luyen van 2019.jpg" />
+    <Content Include="Resources\On luyen van 2022.jpg" />
+    <Content Include="Resources\On thi 789+.jpg" />
+    <Content Include="Resources\On thi ngu van.jpg" />
+    <Content Include="Resources\On thi tieng anh.jpg" />
+    <Content Include="Resources\On thi tu nhien 2022.jpg" />
+    <Content Include="Resources\On thi xa hoi 2022.jpg" />
+    <Content Include="Resources\onepiece.jpg" />
+    <Content Include="Resources\Phuong phap ghi nho dinh cao.jpg" />
+    <Content Include="Resources\Ren luyen tu duy phan bien.jpg" />
+    <Content Include="Resources\Than dieu dai hiep.jpg" />
+    <Content Include="Resources\Thien long bat bo.jpg" />
+    <Content Include="Resources\Thu kiem an cuu luc.jpg" />
+    <Content Include="Resources\Tieu ngao giang ho.jpg" />
+    <Content Include="Resources\Trac nghiem dia ly.jpg" />
+    <Content Include="Resources\Tuyet son phi ho.jpg" />
+    <Content Include="Resources\Uyen uong dao.jpg" />
+    <Content Include="Resources\Y thien do long ky.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
